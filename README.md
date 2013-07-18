@@ -18,6 +18,6 @@ npm install ndarray-json
 
 Stringifies an ndarray into JSON.
 
-### `require('ndarray-json').exports(ndarray)` ###
+### `require('ndarray-json').parse(ndarray)` ###
 
 Takes a stringified ndarray and returns a new copy.
