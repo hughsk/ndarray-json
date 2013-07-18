@@ -1,0 +1,34 @@
+{
+  "name": "ndarray-json",
+  "version": "0.0.0",
+  "description": "Serialize/deserialize ndarrays to and from JSON",
+  "main": "index.js",
+  "dependencies": {
+    "dtype": "~0.1.0",
+    "ndarray": "~1.0.5",
+    "cwise": "~0.4.0"
+  },
+  "devDependencies": {
+    "zeros": "0.0.0",
+    "tape": "~1.0.4",
+    "cave-automata-2d": "~0.3.1"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hughsk/ndarray-json.git"
+  },
+  "author": "Hugh Kennedy <hughskennedy@gmail.com> (http://hughskennedy.com/)",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "keywords": [
+    "ndarray",
+    "serialize",
+    "deserialize",
+    "json",
+    "encode",
+    "decode"
+  ]
+}
