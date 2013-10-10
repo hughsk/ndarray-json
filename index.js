@@ -1,26 +1,12 @@
 var ndarray = require('ndarray')
-var dtype = require('dtype')
-var cwise = require('cwise')
 
 module.exports = {
     stringify: stringify
   , parse: parse
 }
 
-var encode = cwise({
-    args: ['array', 'index']
-  , pre: function(shape) {
-    this.encoded = ''
-  }
-  , body: function(array) {
-    this.encoded += array
-    this.encoded += ','
-  }
-  , post: function() {
-    return this.encoded
-  }
-  , funcName: 'cwiseEncoder'
-})
+var encode = require('tab64').encode
+var decode = require('tab64').decode
 
 function stringify(array) {
   var type = array.dtype || 'float32'
@@ -42,7 +28,7 @@ function stringify(array) {
     if (i !== dims) string += ','
   }
   string += '],'
-  string += '"data":[' + encode(array).slice(0, -1) + ']}'
+  string += '"data":' + JSON.stringify(encode(array.data)) + '}'
 
   return string
 }
@@ -59,12 +45,7 @@ function parse(input) {
   var d = json.shape.length
   while (d--) size *= json.shape[d]
 
-  var data = new (dtype(json.dtype))(size)
-
-  var l = json.data.length
-  for (var i = 0; i < l; i += 1) {
-    data[i] = json.data[i]
-  }
+  var data = decode(json.data, json.dtype || 'float32')
 
   return ndarray(data, json.shape, json.stride, 0)
 }

@@ -4,9 +4,8 @@
   "description": "Serialize/deserialize ndarrays to and from JSON",
   "main": "index.js",
   "dependencies": {
-    "dtype": "~0.1.0",
     "ndarray": "~1.0.5",
-    "cwise": "~0.4.0"
+    "tab64": "0.0.0"
   },
   "devDependencies": {
     "zeros": "0.0.0",
