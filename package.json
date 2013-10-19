@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "ndarray": "~1.0.5",
-    "tab64": "0.0.0"
+    "tab64": "0.0.1"
   },
   "devDependencies": {
     "zeros": "0.0.0",
