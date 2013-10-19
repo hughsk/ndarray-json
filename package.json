@@ -1,6 +1,6 @@
 {
   "name": "ndarray-json",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Serialize/deserialize ndarrays to and from JSON",
   "main": "index.js",
   "dependencies": {
